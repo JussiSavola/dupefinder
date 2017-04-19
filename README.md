@@ -12,3 +12,5 @@ Usage:
 4) enjoy your increased storage space
 
 Command line parameter may be given or omitted. If given, it means the root directory of the search.
+
+Thanks to Edvard Majakari for help with the class oriented implementation.
