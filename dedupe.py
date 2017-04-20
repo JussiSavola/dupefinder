@@ -29,9 +29,11 @@ def output_dupes(c):
               "(select md5sum from files group by md5sum having count(*) > 1) order by md5sum")
 
     rows = c.fetchall()
-    print rows
+    # print rows
     for row in rows:
         print row
+        c.execute("UPDATE files SET duplicate = ? where md5sum = ?", ('1', row[0]))
+
 
 def is_regular(fullname):
     try:
