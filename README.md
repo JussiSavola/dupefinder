@@ -1,6 +1,8 @@
 # dupefinder
 Python code to manage duplicate files with sqlite
 
+Very much work in progress. Not suitable for general population.
+
 Usage:
 
 1) search duplicate files with either utility (dedupe.py or dedupeo.py)
