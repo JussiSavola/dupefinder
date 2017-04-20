@@ -62,8 +62,8 @@ class DbStore:
         self.batch_size = 100
 
     def add(self, filename, filesize, digest, ftime):
-        sql = "INSERT INTO files VALUES (?,?,?,?,?,?,?)"
-        self.cursor.execute(sql, (self.name, filename, filesize, digest, ftime,'0','0'))
+        sql = "INSERT INTO files VALUES (?,?,?,?,?,?,?,?)"
+        self.cursor.execute(sql, (self.name, filename, filesize, digest, ftime,'0','0','0'))
 
         self.buf_count += 1
         if self.buf_count >= self.batch_size:
@@ -88,7 +88,8 @@ class DbStore:
 
     def __ensure_table_present(self):
         self.conn.cursor().execute('''CREATE TABLE IF NOT EXISTS files
-            (hostname text, fullname text, size text, md5sum text, filetime text, nukeme text, mastercopy text)''')
+            (hostname text, fullname text, size text, md5sum text, filetime text, nukeme text, \
+            mastercopy text, duplicate text)''')
         self.conn.commit()
 
 
