@@ -85,6 +85,8 @@ class DbStore:
         print("Printing all dupes: ")
         for row in rows:
             print row
+            self.cursor.execute("""UPDATE files SET duplicate = ? where md5sum = ? """, ('1', row[0]))
+            self.conn.commit()
 
     def __ensure_table_present(self):
         self.conn.cursor().execute('''CREATE TABLE IF NOT EXISTS files
