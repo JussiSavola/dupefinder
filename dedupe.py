@@ -21,7 +21,7 @@ import socket
 
 def create_db_table(c):
     c.execute('''CREATE TABLE files
-        (hostname text, fullname text, size text, md5sum text, filetime text, nukeme text, mastercopy text)''')
+        (hostname text, fullname text, size text, md5sum text, filetime text, nukeme text, mastercopy text, duplicate text)''')
 
 
 def output_dupes(c):
@@ -115,8 +115,8 @@ def main(argv):
                         print "full filename, size:", fullname, filesize
                         utf8name = unicode(fullname, 'latin-1')
 
-                        c.execute("INSERT INTO files VALUES (?,?,?,?,?,?,?)",
-                            (mysystemname, utf8name, filesize, myhash, '3','0','0'))
+                        c.execute("INSERT INTO files VALUES (?,?,?,?,?,?,?,?)",
+                            (mysystemname, utf8name, filesize, myhash, '3','0','0','0'))
                     else:
                         try:
                             print (str(fullname) + " file size too small (" + str(filesize) + "), or some other"
