@@ -1,0 +1,3 @@
+- After finding the duplicates, mark them in the DB for easier reference in the next phases
+- ... or create a new table in the database for them, for the same reason
+- Make dupekiller erase the entries from the database.
