@@ -123,7 +123,7 @@ class DupChecker:
             file_chunk = file_beginning + file_end
             digest = hashlib.md5(file_chunk).hexdigest()
         except StandardError, err:
-            warn("Unable to read file ", fullname, err)
+            warn("Unable to read file " +str(fullname)+ " err: " + str(err))
             return
         finally:
             current_file.close()
