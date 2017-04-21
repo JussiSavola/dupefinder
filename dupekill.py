@@ -54,10 +54,13 @@ def main(argv):
 
     for entry in list:
         try:
-            # os.remove(entry)
-            print ("would be erasing: " + str(entry))
+            a  = str(entry[0])
+            print ("about to remove " + a)
+            os.remove(a)
+            print ("... removed " + a)
+            # print ('would be erasing: ' + '"'+str(entry)+'"')
         except:
-            print ("skipping: " + entry)
+            print ("skipping: " + str(entry))
 
 
 if __name__ == "__main__":
