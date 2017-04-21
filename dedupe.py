@@ -130,7 +130,7 @@ def main(argv):
                     print ("skipping: ", fullname)
 
             except IOError as e:
-                print ("kuukkeliskuu")
+                print("kuukkeliskuu: " + str(e))
 
     output_dupes(c)
     conn.commit()
