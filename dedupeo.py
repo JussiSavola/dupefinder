@@ -170,7 +170,7 @@ class DupChecker:
                         debug(fmt.format(self.trim_str(fullname, 60), filesize, digest))
 
                 except IOError as e:
-                    print("kuukkeliskuu: " + e)
+                    print("kuukkeliskuu: " + str(e))
 
         self.store.commit()
         self.store.output_dupes()
